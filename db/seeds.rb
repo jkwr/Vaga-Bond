@@ -19,4 +19,3 @@ City.create({location: "San Francisco", date_traveled: "11/11/2016", description
 City.create({location: "Gibraltar", date_traveled: "12/11/2016", description: "Big Mtn"})
 City.create({location: "London", date_traveled: "1/11/2017", description: "beautiful!"})
 Post.create({title: "SF Zoo", description: "this is a great place to visit"})
-

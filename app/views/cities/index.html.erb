@@ -1,0 +1,11 @@
+<%= link_to "New Post", new_posts_path %>
+<h1> <%= @city.name %> </h1>
+<div class= "background_img">  </div>
+<style>
+.background_img {
+  background-image: url(<%= @city.background_img %>);
+}
+</style>
+<%= @posts.each do |post| %>
+  
+<% end %>

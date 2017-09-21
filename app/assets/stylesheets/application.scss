@@ -16,10 +16,17 @@
 @import "materialize";
 @import "materialize/extras/nouislider";
 
+/*This is where the CSS starts*/ 
 
-
-
-
+.nav-wrapper {
+	background-color: white;
+}
+.nav-wrapper a {
+	color: black;
+}
+#please_login {
+	color: black;
+}
 
 
 

@@ -2,11 +2,30 @@
 
 <h1> Profile </h1>
 
+
+  <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator img" src="<%= @user.prof_image %>">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Name<i class="material-icons right">more_vert</i></span>
+      <p><a href="#"></a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+    </div>
+  </div>
+
 <ul>
-	<li><%= @user.prof_image %>	</li>
+	<li></li>
 	<li><%= @user.first_name %></li>
 	<li><%= @user.last_name %></li>
 	<li><%= @user.hometown %></li>
 </ul>
 <%= link_to 'Edit', edit_user_path %>
+<%= link_to 'San Francisco', '/cities/sanfrancisco' %>
+<%= link_to 'London', '/cities/london' %>
+<%= link_to 'Gibraltar', '/cities/gibraltar' %>
+
 <br />

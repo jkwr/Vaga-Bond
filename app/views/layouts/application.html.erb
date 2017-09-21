@@ -7,29 +7,33 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-   <body>
-     <% if @current_user == nil %>
-      <nav>
-       <div class="nav-wrapper">
-         <a href="/" class="brand-logo">Logo</a>
-         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><%= link_to 'Sign Up', new_users_path %> </li>
-           <li><%= link_to 'Login', login_path %> </li>
-         </ul>
-       </div>
-     </nav>
-     <% else %>
-       <nav>
-       <div class="nav-wrapper">
-         <a href="/" class="brand-logo">Logo</a>
-         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to 'Profile', '/users/' + session[:user_id].to_s %> </li>
-           <li><%= link_to 'Logout', logout_path %> </li>
-         </ul>
-       </div>
-     </nav>
-     <% end %>
+
+<% if current_user == nil %>
+   <nav>
+    <div class="nav-wrapper">
+      <a> <%= link_to 'Vaga', root_path, :class=>"brand-logo"%> </a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+       <li><%= link_to 'Sign Up', new_users_path %> </li>
+        <li><%= link_to 'Login', login_path, :class=>"waves-effect waves-light grey btn" %> </li>
+      </ul>
+    </div>
+  </nav> 
+<% else %>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Logo</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+         <li><%= link_to 'profile', users_path %> </li>
+        <li><%= link_to 'Logout', logout_path, :class=>"waves-effect waves-light grey btn"%> </li>
+      </ul>
+    </div>
+  </nav>
+  <% end %>
+  <body>
+
 <%= yield %>
 <!-- ... -->
 </body>
+
 </html>

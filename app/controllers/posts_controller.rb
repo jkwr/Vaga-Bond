@@ -5,12 +5,14 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     @post.city_name = params[:city_name]
+    redirect_to '/cities/' + params[:city_name]
   end
 
 
 private
 
 def post_params
-  params.require(:posts).permit(:title, :description)
+post_param = params.require(:post).permit(:title, :description)
+post_param.merge(:city_name => params[:city_name])
 end
 end

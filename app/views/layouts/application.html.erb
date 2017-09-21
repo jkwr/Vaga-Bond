@@ -7,6 +7,7 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
 <% if current_user == nil %>
    <nav>
     <div class="nav-wrapper">
@@ -30,7 +31,6 @@
   </nav>
   <% end %>
   <body>
-
 
 <%= yield %>
 <!-- ... -->

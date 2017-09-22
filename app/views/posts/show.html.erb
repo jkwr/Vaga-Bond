@@ -2,4 +2,20 @@
 
 Post by <%= @post.user.first_name %>
 <%= @post.title  %>
-<%= @post.description %>
+<span>
+<% if @post.description.length > 100 %>
+  <%= truncate(@post.description, length: 100) %>
+  <%= link_to 'Read more', '', class: "read-more" %>
+  <script>
+    $('.read-more').on('click', function(e) {
+      e.preventDefault()
+      $(this).parent().html('<%= escape_javascript @post.description %>')
+    })
+  </script>
+<% else %>
+  <%= @post.description %>
+<% end %>
+</span>
+<br />
+<%= link_to "Edit Post", edit_post_path %>
+<%= link_to "Delete", destroy_post_path, :data => {:confirm => "Are you sure you want to delete #{@post.title}?", :method => "delete"} %>

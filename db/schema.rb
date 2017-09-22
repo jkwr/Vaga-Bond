@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170921233122) do
     t.bigint "city_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "city_name"
     t.bigint "user_id"
     t.index ["city_id"], name: "index_posts_on_city_id"
     t.index ["user_id"], name: "index_posts_on_user_id"

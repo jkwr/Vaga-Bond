@@ -48,12 +48,17 @@
                 </div>
             </div>
               </div>
+              
               <div id="profile-page-wall" class="col s12 m8">
-        
+        			<% @user.posts.each do |post| %>
+        			<p>Title: <%= post.title %></p>
+        			<%= link_to post.title, post_path(post) %>
+        			<% end %>
               </div>
               <!--/ profile-page-wall -->
             </div>
           </div>
 </ul>
+
 
 <br /> -->

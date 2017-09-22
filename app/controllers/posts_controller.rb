@@ -12,6 +12,9 @@ class PostsController < ApplicationController
 			redirect_to user_path current_user
 		end 
 	end 
+	def show
+		@post = Post.find_by_id(params[:id])
+	end
 
 	private
 

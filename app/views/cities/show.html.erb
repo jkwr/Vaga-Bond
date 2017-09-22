@@ -1,6 +1,13 @@
 
+<% @posts.each do |post| %>
+  <%= post.title %>
+  <%= link_to post.title, post_path(post) %>
+  <%= post.description %>
+<% end %>
+
 <ul>
 <li><%= @city.location %></li>
 <li><%= @city.description %></li>
 <li><%= @city.date_traveled %></li>
 </ul>
+<%= link_to "Add Post", "/cities/#{params[:city_name]}/posts/new" %>

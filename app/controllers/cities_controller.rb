@@ -7,7 +7,18 @@ class CitiesController < ApplicationController
 	def create
 		@cities = City.find(params[:id])
 	end 
+
 	def show
 		@city = City.find(params[:id])
+		@post = Post.all
+		
 	end
+
+
+
 end
+
+
+
+
+

@@ -5,7 +5,6 @@ class PostsController < ApplicationController
 
 	def create
 		post_params = params.require(:post).permit(:title, :description)
-		
 		post = Post.new(post_params)
 		post.user = current_user
 		if post.save
@@ -14,6 +13,7 @@ class PostsController < ApplicationController
 	end 
 	def show
 		@post = Post.find_by_id(params[:id])
+
 	end
 
 	private

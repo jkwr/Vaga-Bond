@@ -4,3 +4,19 @@
 <li><%= @city.description %></li>
 <li><%= @city.date_traveled %></li>
 </ul>
+
+
+
+<h1>Posts from other users</h1>
+<% new_post = @post.reverse %>
+<% new_post.each do |f| %>
+
+<ul>
+	<li><strong>Title:</strong> <%= f.title %></li>
+	<li><strong>Description:</strong> <%= f.description %></li>
+</ul>
+<% end %>
+
+<a href='/cities/<%= @city.id %>/posts/new'>new post</a>
+
+       

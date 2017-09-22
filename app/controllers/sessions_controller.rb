@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 	def new
 		@user = User.new
-	end 
+	end
   	def create
     user_params = params.require(:user).permit(:email, :password)
     @user = User.confirm(user_params)
@@ -15,8 +15,8 @@ class SessionsController < ApplicationController
     end
   end
     def destroy
-    session[:user_id] = nil
-    flash[:notice] = "Successfully logged out."        # <--- Add this flash notice
-    redirect_to root_path
+    	session[:user_id] = nil
+    	flash[:notice] = "Successfully logged out."        # <--- Add this flash notice
+    	redirect_to root_path
   end
 end

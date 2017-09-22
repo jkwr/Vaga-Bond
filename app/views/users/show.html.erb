@@ -3,29 +3,29 @@
             <!-- profile-page-header -->
             <div id="profile-page-header" class="card">
                 <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="http://bermudalimo.com/wp-content/uploads/2013/03/header-travelagent.png">                    
+                    <img class="activator" src="http://bermudalimo.com/wp-content/uploads/2013/03/header-travelagent.png">
                 </div>
                 <figure  class="card-profile-image">
                     <img  id='prof_image' src="<%=@user.prof_image%>" class= 'circle z-depth-2 responsive-img activator'>
                 </figure>
                 <div class="card-content">
-                  <div class="row">                    
-                    <div class="col s3 offset-s2">                        
+                  <div class="row">
+                    <div class="col s3 offset-s2">
                         <h4 class="card-title grey-text text-darken-4"><%= @user.first_name %></h4>
-                        <p class="medium-small grey-text">Name</p>                        
+                        <p class="medium-small grey-text">Name</p>
                     </div>
                     <div class="col s2 center-align">
                         <h4 class="card-title grey-text text-darken-4">10</h4>
-                        <p class="medium-small grey-text">Places Visited</p>                        
+                        <p class="medium-small grey-text">Places Visited</p>
                     </div>
                     <div class="col s2 center-align">
                         <h4 class="card-title grey-text text-darken-4">6</h4>
-                        <p class="medium-small grey-text">Reviews posted</p>                        
-                    </div>                    
+                        <p class="medium-small grey-text">Reviews posted</p>
+                    </div>
                     <div class="col s2 center-align">
                         <h4 class="card-title grey-text text-darken-4"></h4>
-                        <p class="medium-small grey-text"></p>                        
-                    </div>                    
+                        <p class="medium-small grey-text"></p>
+                    </div>
                     <div class="col s1 right-align">
                       <a class="btn-floating activator waves-effect waves-light darken-2 right">
                           <i class="mdi-action-perm-identity"></i>
@@ -40,13 +40,14 @@
                     </p>
 
                     <p>Retired 65 year-old looking to fuck shit up around the world</p>
-                    
+
                     <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i><%=@user.hometown%></p>
                     <p><i class="mdi-communication-email cyan-text text-darken-2"></i></p>
                     <p><i class="mdi-social-cake cyan-text text-darken-2"></i></p>
                     <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i><%= link_to 'Edit', edit_user_path, :class=>"waves-effect waves-light grey btn" %></p>
                 </div>
             </div>
+
               	</div>
               	<h1>Recent Reviews</h1>
              	 <% @user.posts.each do |post| %>  
@@ -69,6 +70,8 @@
 
 
 
+              </div>
+
               <div id="profile-page-wall" class="col s12 m8">
         			
         			<p></p>
@@ -79,6 +82,9 @@
             </div>
           </div>
 </ul>
+<%= link_to "San Francisco", '/cities/san-francisco' %>
+<%= link_to "Gibraltar", '/cities/gibraltar' %>
+<%= link_to "London", '/cities/london' %>
 
 
-<br /> -->
+<br />

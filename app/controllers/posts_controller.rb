@@ -22,14 +22,19 @@ class PostsController < ApplicationController
 	def edit
 		@post = Post.find_by_id(params[:id])
 		if @post.user_id != session[:user_id]
-			flash[:error] = "Not the user for this post."
+			flash[:notice] = "Not the user for this post."
 			redirect_to post_path
 		end
 	end
 	def destroy
 		@post = Post.find(params[:id])
-	 	@post.destroy
-	 	redirect_to user_path current_user
+		if @post.user_id != session[:user_id]
+			flash[:notice] = "Not the user for this post."
+			redirect_to user_path current_user
+		else
+	 		@post.destroy
+	 		redirect_to user_path current_user
+	end
 	end
 
 	private

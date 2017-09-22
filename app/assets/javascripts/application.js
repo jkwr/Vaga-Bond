@@ -19,11 +19,7 @@
 //= require jquery.turbolinks
 //= require materialize
 //= require materialize/extras/nouislider
-  $( document ).ready(function(){
-   
-   $(document).ready(function(){
-      $('.slider').slider();
-    });
-   $(".button-collapse").sideNav();
-
-   });
+document.addEventListener("turbolinks:load", function() {
+  $('.slider').slider();
+  $(".button-collapse").sideNav();
+})

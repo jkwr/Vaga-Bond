@@ -24,3 +24,7 @@ document.addEventListener("turbolinks:load", function() {
   $(".button-collapse").sideNav();
   $('.materialboxed').materialbox();
 })
+
+ $('.tooltipped').tooltip({delay: 50});
+
+

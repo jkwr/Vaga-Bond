@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   post '/sessions', to: 'sessions#create'
 
+  get '/posts/:id', to: 'posts#show', as: 'post'
+
+
+
+
   get '/cities', to: 'cities#index', as: 'city'
 
   get '/cities/:city_id/posts/new', to: 'posts#new', as:'posts'

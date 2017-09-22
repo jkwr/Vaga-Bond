@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post '/sessions', to: 'sessions#create'
 
   get '/posts/:id', to: 'posts#show', as: 'post'
+  get '/cities', to: 'cities#index', as: 'cities'
   get '/cities/:city_name', to: 'cities#show', as: 'city'
   get '/cities/:city_name/posts/new', to: 'posts#new', as:'new_posts'
   post '/cities/:city_name/posts', to: 'posts#create'

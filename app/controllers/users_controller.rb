@@ -14,7 +14,9 @@ class UsersController < ApplicationController
 	    	login(@user)
 	    	redirect_to @user
 		else
-	 		flash[:error] = "email already in use, please try a different email"
+	 		# flash[:error] = "email already in use, please try a different email"
+	 		@error_message = "email already in use, please try a different email"
+	 		
 	 		render :new
   
 		end

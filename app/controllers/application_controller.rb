@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include CitiesHelper
 
-  before_action :current_user
+  before_action :current_user, :show_form
 
+
+  def show_form
+  	@new_user = User.new
+  end 
 
 end

@@ -15,7 +15,7 @@
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
-       <li><%= link_to 'Sign Up', new_users_path %> </li>
+       <li><a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a></li>
        <li><%= link_to 'Cities', cities_path %> </li>
         <li><%= link_to 'Login', login_path, :class=>"waves-effect waves-light grey btn" %> </li>
       </ul>
@@ -36,12 +36,47 @@
   </nav>
   <% end %>
   <body>
-<% flash.each do |message_type, message| %>
-    <%= javascript_tag "Materialize.toast('#{message_type + message}', 4000)" %>
-<% end %>
 
+<% flash.each do |message_type, message| %>
+    <%= javascript_tag "Materialize.toast('#{message_type + " "+message}', 4000)" %>
+<% end %>
+  
 <%= yield %>
 <!-- ... -->
 </body>
 
 </html>
+
+
+  <!-- Modal Trigger -->
+  
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+     <%= form_for @new_user do |f| %>
+  <div>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div>
+  <div>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div>
+  <div>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+   <div>
+    <%= f.text_field :hometown, placeholder: "Hometown" %>
+  </div>
+   <div>
+    <%= f.text_field :prof_image, placeholder: "Image" %>
+  </div>
+  <%= f.submit "Sign Up" %>
+<% end %>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>

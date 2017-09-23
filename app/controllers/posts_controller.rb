@@ -6,11 +6,12 @@ class PostsController < ApplicationController
 
 	def create
 		post = Post.create(post_params)
-	if post.save
-		redirect_to user_path current_user
-	else
-		flash[:error] = "Please input a valid post"
-	end 
+		if post.save
+			redirect_to user_path current_user
+		else
+			flash[:error] = "Please input a valid post"
+			redirect_to new_posts_path
+		end 
 	end
 
 	def show

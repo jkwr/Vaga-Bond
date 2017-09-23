@@ -4,21 +4,14 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 
-	def new
-		@user = User.new
-	end
-
 	def create
 		@user = User.create(user_params)
 	 	if @user.save
 	    	login(@user)
-	    	redirect_to @user
+	    	redirect_to user_path(@user)
 		else
-	 		# flash[:error] = "email already in use, please try a different email"
-	 		@error_message = "email already in use, please try a different email"
-	 		
-	 		render :new
-  
+	 		flash[:error] = "email already in use, please try a different email"
+	 		redirect_to root_path
 		end
 	end
 

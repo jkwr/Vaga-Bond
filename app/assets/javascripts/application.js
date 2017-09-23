@@ -28,9 +28,31 @@ document.addEventListener("turbolinks:load", function() {
 
  $('.tooltipped').tooltip({delay: 50});
 
-
-
     // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
     $('.modal').modal();
+
+
+
+let postCount = $('.pfile').find("a").length;
+$('.post-count').append(postCount)
+
+
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  

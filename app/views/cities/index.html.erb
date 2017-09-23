@@ -1,6 +1,20 @@
+<div class="jumbotron" style="height: 80vh; background-image: url(<%= image_path 'travel.jpg'  %>); background-size: cover"></div>
+
+
+
+
+<div class="row">
 <%@cities.each do |t| %>
-<ul>
-<li><%=t.location%></li>
-<li><%=t.description%></li>
-</ul>
-<% end %>
+<a href='<%= get_path_from_city(t) %>'> 
+    <div class="col s12 m4">
+      <div class="card panel">
+        <div class="card-image">
+         <%= image_tag t.photo %>
+          <span class="card-title"><%=t.location%></span>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+

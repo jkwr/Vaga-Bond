@@ -16,7 +16,24 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
        <li><%= link_to 'Sign Up', new_users_path %> </li>
-       <li><%= link_to 'Cities', cities_path %> </li>
+        <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Cities</a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <% City.all.each do |city| %>
+            <li><%= link_to city.location, get_path_from_city(city) %></li>
+            <li class="divider"></li>
+            <%end%>
+          </ul>
+
+
+
+
+
+
+
+
+
+
         <li><%= link_to 'Login', login_path, :class=>"waves-effect waves-light grey btn" %> </li>
       </ul>
     </div>
@@ -29,12 +46,27 @@
     		<li id='welcome'><%= 'Welcome back ' + current_user.first_name + '!' %> </li> 
          <li><%= link_to 'Profile', user_path(current_user.id) %> </li>  
          <li><%= link_to 'Cities', cities_path %> </li> 
+          <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Cities</a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <% City.all.each do |city| %>
+            <li><%= link_to city.location, get_path_from_city(city) %></li>
+            <li class="divider"></li>
+            <%end%>
+          </ul>
+
+
+
+
+
+
 
         <li><%= link_to 'Logout', logout_path, :class=>"waves-effect waves-light grey btn"%> </li>
       </ul>
     </div>
   </nav>
   <% end %>
+  
   <body>
 
 <%= yield %>

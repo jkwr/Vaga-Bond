@@ -1,5 +1,4 @@
-<div class="pic_contained">
-</div>
+<div class="jumbotron" style="height: 80vh; background-image: url(<%= asset_path @city.photo %>); background-size: cover"></div>
 
 <% @posts.each do |post| %>
   <%= post.title %>

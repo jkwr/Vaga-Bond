@@ -12,7 +12,8 @@
      <a> <%= link_to 'Vaga', root_path, :class=>"brand-logo"%> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-       <li><%= link_to 'Sign Up', new_users_path %> </li>
+
+       <li><%= link_to 'Sign Up', new_users_path %> </li> 
         <li><a class='dropdown-button btn' href='#' data-activates='dropdown1'>Cities</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
@@ -22,6 +23,10 @@
             <%end%>
             <li><%= link_to 'All Cities', cities_path %> </li> 
           </ul></li>
+
+
+       <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Sign up</a></li>
+<!-- Take a look a both of the sigup buttons and make corrections  -->
         <li><%= link_to 'Login', login_path, :class=>"waves-effect waves-light grey btn" %> </li>
       </ul>
     </div>
@@ -49,8 +54,58 @@
   </nav>
   <% end %> 
   <body>
+
+
+<% flash.each do |message_type, message| %>
+    <%= javascript_tag "Materialize.toast('#{message_type + " "+message}', 4000)" %>
+<% end %>
+  
+
 <%= yield %>
 <!-- ... -->
 </body>
 
 </html>
+
+
+  <!-- Modal Trigger -->
+  
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+     <%= form_for @new_user do |f| %>
+  <div>
+    <%= f.text_field :first_name, placeholder: "First Name" %>
+  </div>
+  <div>
+    <%= f.text_field :last_name, placeholder: "Last Name" %>
+  </div>
+  <div>
+    <%= f.text_field :email, placeholder: "Email" %>
+  </div>
+  <div>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </div>
+   <div>
+    <%= f.text_field :hometown, placeholder: "Hometown" %>
+  </div>
+   <div>
+    <%= f.text_field :prof_image, placeholder: "Image" %>
+  </div>
+  <%= f.submit "Sign Up" %>
+<% end %>
+    </div>
+   
+  </div>
+
+
+
+
+
+
+
+
+
+
+

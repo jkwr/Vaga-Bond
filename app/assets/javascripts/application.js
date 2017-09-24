@@ -19,9 +19,43 @@
 //= require jquery.turbolinks
 //= require materialize
 //= require materialize/extras/nouislider
+$(document).ready(function(){
+	let postCount = $('.pfile').find("a").length;
+	$('.post-count').append(postCount)
+	
 document.addEventListener("turbolinks:load", function() {
   $('.slider').slider();
   $(".button-collapse").sideNav();
   $('.materialboxed').materialbox();
   $('.parallax').parallax();
 })
+
+ $('.tooltipped').tooltip({delay: 50});
+
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+
+
+
+
+
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

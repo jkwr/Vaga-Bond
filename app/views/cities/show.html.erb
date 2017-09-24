@@ -5,10 +5,14 @@
 <li><%= @city.date_traveled %></li>
 </div>
 
+
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <div class="center-align">
  <%= link_to "Add Post", "/cities/#{params[:city_name]}/posts/new", :class=>"waves-effect waves-light grey btn" %></div>
 <div>
+
+
+
 <% @posts.each do |post| %>
       <div class="row">
         <div class="col s12 m4">
@@ -27,13 +31,4 @@
 </div>
 
 
-<!-- 
-<a class="waves-effect waves-light btn"><i class="material-icons left">rate_review</i>Add Post</a> -->
 
-
-
-
-
-
-
-	

@@ -66,8 +66,21 @@ height: 15vw ;
 	background-size: cover;
 }
 
-.container {
-	border: 2px solid black;
+
+
+
+
+
+
+
+
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+ main {
+    flex: 1 0 auto;
+  }
 
 

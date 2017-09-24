@@ -1,5 +1,4 @@
 <h1> Profile </h1>
-
 <div id="profile-page" class="section">
             <!-- profile-page-header -->
             <div id="profile-page-header" class="card">
@@ -20,7 +19,7 @@
                         <p class="medium-small grey-text">Places Visited</p>
                     </div>
                     <div class="col s2 center-align">
-                        <h4 class="card-title grey-text text-darken-4 post-count"></h4>
+                        <h4 class="card-title grey-text text-darken-4">6</h4>
                         <p class="medium-small grey-text">Reviews posted</p>
                     </div>
                     <div class="col s2 center-align">
@@ -47,23 +46,32 @@
                     <p><i class="mdi-social-cake cyan-text text-darken-2"></i></p>
                     <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i><%= link_to 'Edit', edit_user_path, :class=>"waves-effect waves-light grey btn" %></p>
                 </div>
-            </div>
+                </div>
               	</div>
+
+
+
               	<h1>Recent Reviews</h1>
-                  <div class="row">
+                <div class="row">
              	 <% @user.posts.each do |post| %>  
-             
               		<div class="col s12 m4">
               			<div class="card blue-grey darken-1">
-              				<div class="card-content white-text pfile">
-              					<span class="card-title profile-posts">Title: <%= post.title %></span>
+              				<div class="card-content white-text">
+              					<span class="card-title">Title: <%= post.title %></span>
               					<p><%= link_to post.description, post_path(post) %></p>
               				</div>
               			</div>
               		</div>
-              <% end %>   
+                   <% end %> 
+              	</div>
+               
 
-              </div>
+
+
+
+
+
+
 
               </div>
 

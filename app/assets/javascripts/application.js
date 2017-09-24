@@ -27,6 +27,7 @@ document.addEventListener("turbolinks:load", function() {
   $('.slider').slider();
   $(".button-collapse").sideNav();
   $('.materialboxed').materialbox();
+  $('.parallax').parallax();
 })
 
  $('.tooltipped').tooltip({delay: 50});

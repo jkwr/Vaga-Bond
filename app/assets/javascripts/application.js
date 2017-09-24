@@ -20,6 +20,9 @@
 //= require materialize
 //= require materialize/extras/nouislider
 $(document).ready(function(){
+	let postCount = $('.pfile').find("a").length;
+	$('.post-count').append(postCount)
+	
 document.addEventListener("turbolinks:load", function() {
   $('.slider').slider();
   $(".button-collapse").sideNav();
@@ -33,8 +36,7 @@ document.addEventListener("turbolinks:load", function() {
 
 
 
-let postCount = $('.pfile').find("a").length;
-$('.post-count').append(postCount)
+
 
 
   });

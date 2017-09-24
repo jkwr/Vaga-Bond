@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def show_form
   	@new_user = User.new
+  
   end 
 
 end

@@ -11,9 +11,10 @@ module SessionsHelper
 	def logged_in?
 		!current_user.nil?
 	end
-
-	def logout
-		session[:user_id] = nil
-  		@current_user = nil
-	end
+#pretty sure this is a pointless method as its being done in sessions controller destroy method.
+#I will leave it here incase I am wrong, but i tested and it didnt break anything
+	# def logout
+	# 	session[:user_id] = nil
+ #  		@current_user = nil
+	# end
 end

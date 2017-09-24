@@ -1,7 +1,7 @@
 <%= form_for @post, url:"/cities/#{params[:city_name]}/posts" do |f| %>
-	<%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
      <%= f.hidden_field :city_id, :value => @city_id %>
-	  <div>
+      <div>
     <%= f.text_field :title, placeholder: "Title" %>
 
   </div>

@@ -1,14 +1,39 @@
-<div class="jumbotron" style="height: 80vh; background-image: url(<%= asset_path @city.photo %>); background-size: cover"></div>
+<div class="jumbotron" style="height: 80vh; background-image: url(<%= asset_path @city.photo %>); background-size: cover">
 
-<% @posts.each do |post| %>
-  <%= post.title %>
-  <%= link_to post.title, post_path(post) %>
-  <%= post.description %>
-<% end %>
-
-<ul>
 <li><%= @city.location %></li>
 <li><%= @city.description %></li>
 <li><%= @city.date_traveled %></li>
-</ul>
-<%= link_to "Add Post", "/cities/#{params[:city_name]}/posts/new" %>
+</div>
+
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ <div class="center-align">
+ <%= link_to "Add Post", "/cities/#{params[:city_name]}/posts/new", :class=>"waves-effect waves-light grey btn" %></div>
+<div>
+<% @posts.each do |post| %>
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="card grey">
+          	<div class="card-action">
+             <%= image_tag User.find_by_id(post.user_id).prof_image, :class=>'user_img'%>
+             <%= link_to 'Reviewed By:'+ User.find_by_id(post.user_id).first_name + (' ') + User.find_by_id(post.user_id).last_name, user_path(:id)  %><%= link_to 'View', post_path(post), :class=>'btn-floating btn-large waves-effect waves-light red' %>
+            </div>
+            <div class="card-content white-text"> 
+              <span class="card-title">Title:<%= post.title %></span>
+              <p><%= post.description %></p>
+          </div>
+        </div>
+      </div>
+<% end %>
+</div>
+
+
+<!-- 
+<a class="waves-effect waves-light btn"><i class="material-icons left">rate_review</i>Add Post</a> -->
+
+
+
+
+
+
+
+	

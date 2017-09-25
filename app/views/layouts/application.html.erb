@@ -9,12 +9,12 @@
 <% if current_user == nil %>
    <nav>
     <div class="nav-wrapper">
-     <a> <%= link_to 'Vaga', root_path, :class=>"brand-logo"%> </a>
+      <a href="<%= root_path%>">  <img class="brand-logo" src="<%= image_path 'bl.png'%>" style="height: 100%; padding-left: 20px"> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
 
        <li><a class="waves-effect waves-light modal-trigger" href="#modal1">Sign up</a></li>
-        <li><a class='dropdown-button btn' href='#' data-activates='dropdown1'>Cities</a>
+        <li><a class='dropdown-button white btn' href='#' data-activates='dropdown1'>Cities</a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
             <% City.all.each do |city| %>
@@ -32,7 +32,7 @@
 <% else %>
     <nav>
     <div class="nav-wrapper">
-      <a> <%= link_to 'Vaga', root_path, :class=>"brand-logo"%> </a>
+      <a href="<%= root_path%>">  <img class="brand-logo" src="<%= image_path 'bl.png'%>" style="height: 100%; padding-left: 20px"> </a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
     		<li id='welcome'><%= 'Welcome back ' + current_user.first_name + '!' %> </li> 
          <li><%= link_to 'Profile', user_path(current_user.id) %> </li>  
@@ -46,7 +46,7 @@
             </li>
             <li><%= link_to 'All Cities', cities_path %> </li> 
           </ul>
-        <li><%= link_to 'Logout', logout_path, :class=>"waves-effect waves-light grey btn"%> </li>
+        <li><%= link_to 'Logout', logout_path, :class=>"waves-effect waves-light black btn", :id=>'logout' %> </li>
       </ul>
     </div>
   </nav>

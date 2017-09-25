@@ -1,12 +1,25 @@
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <div class="jumbotron" style="height: 80vh; background-image: url(<%= asset_path @city.photo %>); background-size: cover">
 
-<li><%= @city.location %></li>
-<li><%= @city.description %></li>
-<li><%= @city.date_traveled %></li>
+ <a id="menu" class="waves-effect waves-light btn transparent btn-floating" ><i class="material-icons">menu</i></a>
+
+  <div class="tap-target" data-activates="menu">
+    <div class="tap-target-content">
+      <h5>City Location: <%= @city.location%></h5>
+      <p>Photo Location: <%= @city.description%></p>
+      <p>Date Taken: <%= @city.date_traveled%></p>
+      <b<p>Look below to See / Add post </p>
+		
+      
+      <h6>Click Logo in top left of page to go back home</h6> 
+      <h6>Click the button to Minimize me!</h6>
+    </div>
+  </div>
+
 </div>
 
 
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
  <div class="center-align">
  <%= link_to "Add Post", "/cities/#{params[:city_name]}/posts/new", :class=>"waves-effect waves-light grey btn pulse" %></div>
 <div>
@@ -19,10 +32,10 @@
           <div class="card grey">
           	<div class="card-action">
              <%= image_tag User.find_by_id(post.user_id).prof_image, :class=>'user_img'%>
-             <%= link_to 'Reviewed By:'+ User.find_by_id(post.user_id).first_name + (' ') + User.find_by_id(post.user_id).last_name, user_path(:id)  %><%= link_to 'View', post_path(post), :class=>'btn-floating btn-large waves-effect waves-light red' %>
+             <%= link_to 'Reviewed By:'+ post.user.first_name + (' ') + post.user.last_name, user_path(post.user)  %><%= link_to 'View', post_path(post), :class=>'btn-floating btn-large waves-effect waves-light red' %>
             </div>
             <div class="card-content white-text"> 
-              <span class="card-title">Title:<%= post.title %></span>
+              <span class="card-title"><%= post.title %></span>
               <p><%= post.description %></p>
           </div>
         </div>

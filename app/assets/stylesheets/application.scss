@@ -45,13 +45,19 @@
 }
 
 
-
-
-
 .img {
 	width:100px;
-}
+} 
 
+
+#pp {
+  background: url('./passport.jpg') ;
+  background-size: cover;
+  color: black;
+}
+.white-text {
+  color: black !important ;
+}
 
 .card .card-image img {
 height: 15vw ;
@@ -66,14 +72,20 @@ height: 15vw ;
 	background-size: cover;
 }
 
+.page-footer {
+	background-color: black !important  ;
+}
+.profile {
+  font-family: 'Fjalla One', sans-serif;
+}
 
+#bold {
+  font-weight: bold;
+}
 
-
-
-
-
-
-
+#logout{
+  color: white;
+}
 .page-flexbox-wrapper {
   display: flex;
   min-height: 100vh;

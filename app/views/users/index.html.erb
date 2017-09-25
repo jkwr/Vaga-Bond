@@ -1,32 +1,71 @@
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<div>
+
  <div class="slider">
     <ul class="slides">
       <li>
-        <img src="assets/map.jpg"> <!-- random image -->
+         <%= image_tag ("age_cover.jpg")%> <!-- random image -->
         <div class="caption center-align">
-          <h3>Welcome to Vagabond!</h3>
+          <h3>Welcome to Bucket List!</h3>
           <h5 class="light grey-text text-lighten-3">Where will we go next?</h5>
         </div>
       </li>
       <li>
-        <img src="assets/liverpool.jpg"> <!-- random image -->
+        <a href="/cities/london"><%= image_tag"liverpool.jpg"%></a> <!-- random image -->
         <div class="caption left-align">
-          <h3>Checkout</h3>
+          <h3></h3>
           <h5 class="light grey-text text-lighten-3">Liverpool Street Station, London, United Kingdom.</h5>
         </div>
       </li>
       <li>
-        <img src="assets/venice.jpg"> <!-- random image -->
+        <a href="/cities/gibraltar"><%= image_tag "gibraltar_beach.jpg"%></a> <!-- random image -->
         <div class="caption right-align">
-          <h3>Checkout</h3>
-          <h5 class="light grey-text text-lighten-3">Venice, Italy.</h5>
+          <h3></h3>
+          <h5 class="light grey-text text-lighten-3">Gibraltar</h5>
         </div>
       </li>
       <li>
-        <img src="assets/greece.jpg"> <!-- random image -->
+        <a href="/cities/san-francisco"><%= image_tag "lombard.jpg"%></a> <!-- random image -->
         <div class="caption center-align">
-          <h3>Checkout!</h3>
-          <h5 class="light grey-text text-lighten-3">Santorni, Greece.</h5>
+          <h3></h3>
+          <h5 class="light grey-text text-lighten-3">San Francisco, California</h5>
         </div>
       </li>
     </ul>
   </div>
+
+
+<div class="jumbotron" style="height: 140vh; background-image: url(<%= image_path 'travel_quote.jpg' %>); background-repeat: no-repeat; background-position: center;">
+  
+    <a id="menu" class="waves-effect waves-light btn black btn-floating" ><i class="material-icons">menu</i></a>
+<!-- Need to get back to this and finish the intro wording -->
+  <!-- Tap Target Structure -->
+  <div class="tap-target" data-activates="menu">
+    <div class="tap-target-content center-align">
+      <h5>Title</h5>
+      <p>Welcome to Bucket List where you do everything before you die</p>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+        <footer id="footer" class="page-footer" >
+        
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright Text
+            
+            </div>
+          </div>
+        </footer>
+
+</div>
+
+

@@ -28,12 +28,71 @@
 	color: black;
 }
 
-.img {
-	width:100px;
+#prof_image {
+	border-radius: 50%;
+    width: 10%;
+    margin-top: -70px;
+    position: relative;
+    z-index: 1
+}
+
+.user_img {
+	border-radius: 50%;
+    width: 10%;
+    margin-top: -70px;
+    position: relative;
+    z-index: 1
 }
 
 
+.img {
+	width:100px;
+} 
 
 
+#pp {
+  background: url('./passport.jpg') ;
+  background-size: cover;
+  color: black;
+}
+.white-text {
+  color: black !important ;
+}
+
+.card .card-image img {
+height: 15vw ;
+	}
+#welcome {
+	color:black;
+}
+
+.pic_contained {
+	height:70vh;
+	background: url('./sf_header.jpg') top center;
+	background-size: cover;
+}
+
+.page-footer {
+	background-color: black !important  ;
+}
+.profile {
+  font-family: 'Fjalla One', sans-serif;
+}
+
+#bold {
+  font-weight: bold;
+}
+
+#logout{
+  color: white;
+}
+.page-flexbox-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+ main {
+    flex: 1 0 auto;
+  }
 
 

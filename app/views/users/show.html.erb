@@ -1,27 +1,114 @@
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-<h1> Profile </h1>
 
 
-  <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator img" src="<%= @user.prof_image %>">
-    </div>
-    <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">Name<i class="material-icons right">more_vert</i></span>
-      <p><a href="#"></a></p>
-    </div>
-    <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-      <p>Here is some more information about this product that is only revealed once clicked on.</p>
-    </div>
-  </div>
 
-<ul>
-	<li></li>
-	<li><%= @user.first_name %></li>
-	<li><%= @user.last_name %></li>
-	<li><%= @user.hometown %></li>
+
+
+
+
+
+<h1 class="profile"> Profile </h1>
+
+<div id="profile-page" class="section">
+            <!-- profile-page-header -->
+            <div id="profile-page-header" class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="http://bermudalimo.com/wp-content/uploads/2013/03/header-travelagent.png">
+                </div>
+                <figure  class="card-profile-image">
+                    <img  id='prof_image' src="<%=@user.prof_image%>" class= 'circle z-depth-2 responsive-img activator'>
+                </figure>
+                <div class="card-content">
+                  <div class="row">
+                    <div class="col s3 offset-s2">
+                        <h4 class="card-title grey-text text-darken-4"><%= @user.first_name %></h4>
+                        <p class="medium-small grey-text">Name</p>
+                    </div>
+                    <div class="col s2 center-align">
+                        <h4 class="card-title grey-text text-darken-4">10</h4>
+                        <p class="medium-small grey-text">Places Visited</p>
+                    </div>
+                    <div class="col s2 center-align">
+                        <h4 class="card-title grey-text text-darken-4">6</h4>
+                        <p class="medium-small grey-text">Reviews posted</p>
+                    </div>
+                  
+                    <div class="col s1 right-align">
+                      <a class="btn black activator waves-effect waves-light">
+                          <i class="mdi-action-perm-identity">View More</i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                    <div class="card-reveal center-align" style="display: none; transform: translateY(0px);">
+                    <p>
+                      <span class="card-title grey-text text-darken-4"><%= @user.first_name +  @user.last_name  %><i class="material-icons right">close</i>
+                       <i class="mdi-navigation-close right"></i></span>
+
+                      <span><i class="mdi-action-perm-identity cyan-text text-darken-2"></i>Daily Wonderer</span>
+                    </p>
+
+                    <p>Retired 65 year-old looking to fuck shit up around the world</p>
+
+                    <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i><%=@user.hometown%></p>
+                    <p><i class="mdi-communication-email cyan-text text-darken-2"></i></p>
+                    <p><i class="mdi-social-cake cyan-text text-darken-2"></i></p>
+                    <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i><%= link_to 'Edit', edit_user_path, :class=>"waves-effect waves-light grey btn" %></p>
+                </div> 
+                </div>
+              	</div>
+
+
+
+              	
+
+
+
+<div id="profile-page-wall-share" class="row">
+                  <div class="col s12">
+                    <ul class="tabs tab-profile z-depth-1 white" style="width: 100%;">
+                      <li class="tab col s12"><a class="white-text waves-effect waves-light active" href="#UpdateStatus"><i class="mdi-editor-border-color"></i> Recent Reviews</a>
+                      </li>
+                    
+                                         
+                    <div class="indicator" style="right: 1217px; left: 0px;"></div></ul>
+                    <!-- UpdateStatus-->
+                    <div id="UpdateStatus" class="tab-content col s12  grey lighten-4">
+                      <div class="row">
+                       
+                      </div>
+
+
+                <div class="row">
+             	 <% @user.posts.each do |post| %>  
+              		<div  class="col s12 m4">
+              			<div id='pp' class="card  ">
+              				<div class="card-content white-text">
+              					<p id="bold" class="card-title"><%= post.title %></p>
+                        <b><p>Review:<%= post.description %></p></b>
+              					<p><%= link_to 'edit', post_path(post), :class=>'btn-floating btn-large waves-effect waves-light red' %></p>
+              				</div>
+              			</div>
+              		</div>
+                   <% end %> 
+              	</div>
+
+              </div>
+
+              <div id="profile-page-wall" class="col s12 m8">
+        			
+        			<p></p>
+        			
+        			
+              </div>
+              <!--/ profile-page-wall -->
+            </div>
+          </div>
 </ul>
-<%= link_to 'Edit', edit_user_path %>
+
+
+
 <br />
